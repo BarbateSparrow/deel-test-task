@@ -1,11 +1,13 @@
 #### Preconditions: 
 ``` 
 npm install
-
-#### Run tests
+```
+#### Run tests:
 ```
 npm test
+```
 
-#### Reporter
+#### Reporter:
 ```
 wdio spec reporter
+```
