@@ -3,9 +3,18 @@ import {
   HomePage
 } from './pages'
 
+import {MainFragment} from './fragments'
+
+
 const pages = {
   loginPage: new LoginPage(),
   homePage: new HomePage()
 }
 
-export {pages}
+const fragments = {
+  homePage: {
+    mainFragment: new MainFragment()
+  }
+}
+
+export {pages, fragments}
