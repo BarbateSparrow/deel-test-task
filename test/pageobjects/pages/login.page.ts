@@ -1,28 +1,36 @@
+import {step} from '../../../lib'
+
 interface IUser {
   email: string
   password: string
 }
 
 class LoginPage {
-  get email() {return $('input[name="loginfmt"]')}
-  get password() {return $('input[name="passwd"]')}
-  get next() {return $('#idSIButton9')}
-  get no() {return $('#idBtn_Back')}
 
-  async login(user: IUser) {
-    await (await this.email).setValue(user.email)
-    await (await this.next).waitForClickable()
-    await (await this.next).click()
-    await (await this.password).setValue(user.password)
-    await (await this.next).waitForClickable()
-    await (await this.next).click()
-    await (await this.no).waitForClickable()
-    await (await this.no).click()
+  get email() {return $('input[name="email"]')}
+  get password() {return $('input[name="password"]')}
+  get loginButton() {return $('.login__content button:not([class*=login-reset-pass-link])')}
+
+
+  @step('Login')
+  async login(user: IUser) {  
+    const email = await this.email 
+    const password = await this.password
+    const lgnButton = await this.loginButton
+
+    await email.clearValue()
+    await email.setValue(user.email)
+    
+    await password.clearValue()
+    await password.setValue(user.password)
+    
+    await lgnButton.click()
   }
 
+  @step('Open browser')
   async open() {
     await browser.maximizeWindow()
-    return browser.url(`https://antongshortpoint.sharepoint.com/sites/HomeSite`)
+    return browser.url('/')
   }
 
 }

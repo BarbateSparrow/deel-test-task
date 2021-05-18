@@ -1,20 +1,21 @@
 import {
   LoginPage,
-  HomePage
+  CreateContractPage,
+  ContractsPage,
+  ContractPage
 } from './pages'
 
-import {MainFragment} from './fragments'
-
+import {SidebarFragment} from './fragments'
 
 const pages = {
   loginPage: new LoginPage(),
-  homePage: new HomePage()
+  createContractPage: new CreateContractPage(),
+  contractsPage: new ContractsPage(),
+  contractPage: new ContractPage()
 }
 
 const fragments = {
-  homePage: {
-    mainFragment: new MainFragment()
-  }
+  sidebarFragment: new SidebarFragment()
 }
 
 export {pages, fragments}

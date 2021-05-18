@@ -1,0 +1,6 @@
+export * from './base.fragment'
+export * from './general.info.fragment'
+export * from './payment.details.fragment'
+export * from './define.dates.fragment'
+export * from './extras.fragment'
+export * from './compliance.fragment'

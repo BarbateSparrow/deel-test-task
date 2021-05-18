@@ -9,5 +9,5 @@ npm test
 
 #### Reporter:
 ```
-wdio spec reporter
+To open Report run **allure serve** command
 ```

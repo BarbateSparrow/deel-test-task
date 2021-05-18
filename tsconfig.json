@@ -8,6 +8,7 @@
 			"expect-webdriverio",
 			"chai"
 		],
-    "target": "es6"
+    "target": "es6",
+		"experimentalDecorators": true
 	}
 }
